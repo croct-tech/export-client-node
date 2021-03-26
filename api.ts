@@ -180,7 +180,7 @@ export interface CartModified {
      * @type {string}
      * @memberof CartModified
      */
-    type: CartModifiedTypeEnum;
+    type: string;
     /**
      * The shopping cart after modification.
      * @type {Cart}
@@ -188,15 +188,6 @@ export interface CartModified {
      */
     cart: Cart;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum CartModifiedTypeEnum {
-    CART_MODIFIED = 'cartModified'
-}
-
 /**
  * An event recording that a shopping cart was viewed.
  * @export
@@ -208,7 +199,7 @@ export interface CartViewed {
      * @type {string}
      * @memberof CartViewed
      */
-    type: CartViewedTypeEnum;
+    type: string;
     /**
      * The shopping cart that was viewed.
      * @type {Cart}
@@ -216,15 +207,6 @@ export interface CartViewed {
      */
     cart: Cart;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum CartViewedTypeEnum {
-    CART_VIEWED = 'cartViewed'
-}
-
 /**
  * An event recording that a shopping cart started the checkout process.
  * @export
@@ -236,7 +218,7 @@ export interface CheckoutStarted {
      * @type {string}
      * @memberof CheckoutStarted
      */
-    type: CheckoutStartedTypeEnum;
+    type: string;
     /**
      * The shopping cart that started the checkout process.
      * @type {Cart}
@@ -250,15 +232,6 @@ export interface CheckoutStarted {
      */
     orderId: string | null;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum CheckoutStartedTypeEnum {
-    CHECKOUT_STARTED = 'checkoutStarted'
-}
-
 /**
  * An event recording that the user\'s client was detected.
  * @export
@@ -270,7 +243,7 @@ export interface ClientDetected {
      * @type {string}
      * @memberof ClientDetected
      */
-    type: ClientDetectedTypeEnum;
+    type: string;
     /**
      * The detected information about the client.
      * @type {WebClient}
@@ -278,15 +251,6 @@ export interface ClientDetected {
      */
     client: WebClient;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ClientDetectedTypeEnum {
-    CLIENT_DETECTED = 'clientDetected'
-}
-
 /**
  * The available information about a device.
  * @export
@@ -380,7 +344,7 @@ export interface EventOccurred {
      * @type {string}
      * @memberof EventOccurred
      */
-    type: EventOccurredTypeEnum;
+    type: string;
     /**
      * The name of the event. For example, \"pollAnswered\" or \"onboardingStarted\".
      * @type {string}
@@ -418,15 +382,6 @@ export interface EventOccurred {
      */
     details: object;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum EventOccurredTypeEnum {
-    EVENT_OCCURRED = 'eventOccurred'
-}
-
 /**
  * 
  * @export
@@ -476,7 +431,7 @@ export interface GoalCompleted {
      * @type {string}
      * @memberof GoalCompleted
      */
-    type: GoalCompletedTypeEnum;
+    type: string;
     /**
      * The ID of the goal.
      * @type {string}
@@ -496,15 +451,6 @@ export interface GoalCompleted {
      */
     currency: string | null;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum GoalCompletedTypeEnum {
-    GOAL_COMPLETED = 'goalCompleted'
-}
-
 /**
  * An identification or estimation of a geographic location of an object.
  * @export
@@ -597,7 +543,7 @@ export interface LocationDetected {
      * @type {string}
      * @memberof LocationDetected
      */
-    type: LocationDetectedTypeEnum;
+    type: string;
     /**
      * The detected information about the location.
      * @type {Location}
@@ -605,15 +551,6 @@ export interface LocationDetected {
      */
     location: Location;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum LocationDetectedTypeEnum {
-    LOCATION_DETECTED = 'locationDetected'
-}
-
 /**
  * An event recording a period of inactivity.
  * @export
@@ -625,7 +562,7 @@ export interface NothingChanged {
      * @type {string}
      * @memberof NothingChanged
      */
-    type: NothingChangedTypeEnum;
+    type: string;
     /**
      * The timestamp when an activity was last observed, in milliseconds since epoch.
      * @type {number}
@@ -633,15 +570,6 @@ export interface NothingChanged {
      */
     sinceTime: number;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum NothingChangedTypeEnum {
-    NOTHING_CHANGED = 'nothingChanged'
-}
-
 /**
  * The available information about an operating system.
  * @export
@@ -811,7 +739,7 @@ export interface OrderPlaced {
      * @type {string}
      * @memberof OrderPlaced
      */
-    type: OrderPlacedTypeEnum;
+    type: string;
     /**
      * The details of the order placed.
      * @type {Order}
@@ -819,15 +747,6 @@ export interface OrderPlaced {
      */
     order: Order;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum OrderPlacedTypeEnum {
-    ORDER_PLACED = 'orderPlaced'
-}
-
 /**
  * An event recording that a page was loaded.
  * @export
@@ -839,7 +758,7 @@ export interface PageLoaded {
      * @type {string}
      * @memberof PageLoaded
      */
-    type: PageLoadedTypeEnum;
+    type: string;
     /**
      * The URL of the page.
      * @type {string}
@@ -859,15 +778,6 @@ export interface PageLoaded {
      */
     lastModifiedTime: number;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum PageLoadedTypeEnum {
-    PAGE_LOADED = 'pageLoaded'
-}
-
 /**
  * An event recording that a page was opened.
  * @export
@@ -879,7 +789,7 @@ export interface PageOpened {
      * @type {string}
      * @memberof PageOpened
      */
-    type: PageOpenedTypeEnum;
+    type: string;
     /**
      * The URL of the page.
      * @type {string}
@@ -905,15 +815,6 @@ export interface PageOpened {
      */
     referrer: string | null;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum PageOpenedTypeEnum {
-    PAGE_OPENED = 'pageOpened'
-}
-
 /**
  * The detailed information of a product.
  * @export
@@ -992,7 +893,7 @@ export interface ProductViewed {
      * @type {string}
      * @memberof ProductViewed
      */
-    type: ProductViewedTypeEnum;
+    type: string;
     /**
      * The details of the product viewed.
      * @type {ProductDetails}
@@ -1000,15 +901,6 @@ export interface ProductViewed {
      */
     product: ProductDetails;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ProductViewedTypeEnum {
-    PRODUCT_VIEWED = 'productViewed'
-}
-
 /**
  * A subsection of a country, typically a state or province.
  * @export
@@ -1329,7 +1221,7 @@ export interface TabOpened {
      * @type {string}
      * @memberof TabOpened
      */
-    type: TabOpenedTypeEnum;
+    type: string;
     /**
      * The ID that uniquely identifies the tab across the session.
      * @type {string}
@@ -1337,15 +1229,6 @@ export interface TabOpened {
      */
     tabId: string;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum TabOpenedTypeEnum {
-    TAB_OPENED = 'tabOpened'
-}
-
 /**
  * An event recording that the URL of a tab has changed.
  * @export
@@ -1357,7 +1240,7 @@ export interface TabUrlChanged {
      * @type {string}
      * @memberof TabUrlChanged
      */
-    type: TabUrlChangedTypeEnum;
+    type: string;
     /**
      * The ID that uniquely identifies the tab across the session.
      * @type {string}
@@ -1371,15 +1254,6 @@ export interface TabUrlChanged {
      */
     url: string;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum TabUrlChangedTypeEnum {
-    TAB_URL_CHANGED = 'tabUrlChanged'
-}
-
 /**
  * An event recording that the visibility of a tab has changed.
  * @export
@@ -1391,7 +1265,7 @@ export interface TabVisibilityChanged {
      * @type {string}
      * @memberof TabVisibilityChanged
      */
-    type: TabVisibilityChangedTypeEnum;
+    type: string;
     /**
      * The ID that uniquely identifies the tab across the session.
      * @type {string}
@@ -1406,13 +1280,6 @@ export interface TabVisibilityChanged {
     visibility: TabVisibilityChangedVisibilityEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum TabVisibilityChangedTypeEnum {
-    TAB_VISIBILITY_CHANGED = 'tabVisibilityChanged'
-}
 /**
     * @export
     * @enum {string}
@@ -1433,7 +1300,7 @@ export interface TestGroupAssigned {
      * @type {string}
      * @memberof TestGroupAssigned
      */
-    type: TestGroupAssignedTypeEnum;
+    type: string;
     /**
      * The ID of the test. For example, \"black-friday-banner\" or \"home-banner-cta\".
      * @type {string}
@@ -1447,15 +1314,6 @@ export interface TestGroupAssigned {
      */
     groupId: string;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum TestGroupAssignedTypeEnum {
-    TEST_GROUP_ASSIGNED = 'testGroupAssigned'
-}
-
 /**
  * 
  * @export
@@ -1668,7 +1526,7 @@ export interface UserSignedIn {
      * @type {string}
      * @memberof UserSignedIn
      */
-    type: UserSignedInTypeEnum;
+    type: string;
     /**
      * The external ID of the user.
      * @type {string}
@@ -1676,15 +1534,6 @@ export interface UserSignedIn {
      */
     externalUserId: string;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum UserSignedInTypeEnum {
-    USER_SIGNED_IN = 'userSignedIn'
-}
-
 /**
  * An event recording that a user has signed out.
  * @export
@@ -1696,7 +1545,7 @@ export interface UserSignedOut {
      * @type {string}
      * @memberof UserSignedOut
      */
-    type: UserSignedOutTypeEnum;
+    type: string;
     /**
      * The external ID of the user.
      * @type {string}
@@ -1704,15 +1553,6 @@ export interface UserSignedOut {
      */
     externalUserId: string;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum UserSignedOutTypeEnum {
-    USER_SIGNED_OUT = 'userSignedOut'
-}
-
 /**
  * An event recording that a user has signed up.
  * @export
@@ -1724,7 +1564,7 @@ export interface UserSignedUp {
      * @type {string}
      * @memberof UserSignedUp
      */
-    type: UserSignedUpTypeEnum;
+    type: string;
     /**
      * The external ID of the user.
      * @type {string}
@@ -1732,15 +1572,6 @@ export interface UserSignedUp {
      */
     externalUserId: string;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum UserSignedUpTypeEnum {
-    USER_SIGNED_UP = 'userSignedUp'
-}
-
 /**
  * 
  * @export

@@ -7,6 +7,7 @@
     <br />
     Node.js client for the Croct Export API.
 </p>
+
 <p align="center">
     <img alt="Language" src="https://img.shields.io/badge/language-Node-blue" />
     <a href="https://www.npmjs.com/package/@croct/export"><img alt="Version" src="https://img.shields.io/npm/v/@croct/export"/></a>
@@ -19,10 +20,12 @@
     <a href="https://github.com/croct-tech/exporter-client-node/issues">✨ Request Feature</a>
 </p>
 
+
 ## Introduction
 
-The Export API Client for Node allows any application written in server-side JavaScript to export events, sessions, 
+The Export API Client for Node allows any application written in server-side JavaScript to export events, sessions,
 and users with a few lines of code.
+
 
 ## Getting Started
 
@@ -38,6 +41,7 @@ Run the following command to add the client as a dependency to your project and 
 npm install @croct/export
 ```
 
+
 ### Usage
 
 Now the library is installed, you need to initialize the client using the API key of the application you want to 
@@ -48,6 +52,7 @@ import {Configuration, ExportApi} from '@croct/export';
 
 const api = new ExportApi(new Configuration({apiKey: '00000000-0000-0000-0000-000000000000'}));
 ```
+
 
 From this point, you are all set to export data using one of the [export methods](#api-reference). However, developers 
 are usually interested in implementing a routine to export data periodically. If that is the case, there are two 
@@ -102,6 +107,7 @@ async function saveCursor(cursor: string): Promise<void> {
 })();
 ```
 
+
 By reusing the previous cursor on subsequent requests, you guarantee that no data is missed between exports. However, 
 it requires some extra work to store the cursor between exports so that the next export can start from where the 
 previous one left off.
@@ -145,6 +151,7 @@ import {Configuration, ExportApi} from '@croct/export';
 })();
 ```
 
+
 The disadvantage of this approach is that there are no guarantees that the data relative to the specified time window 
 have been processed by the time you make the subsequent request. Such cases can happen when events arrive late, 
 recent data was not processed fast enough, or during maintenance windows.
@@ -179,6 +186,7 @@ import {Configuration, ExportApi} from '@croct/export';
 })();
 ```
 
+
 #### Exporting Sessions
 
 The `exportSessions` method exports sessions from the application associated with the API key, optionally filtered by 
@@ -208,6 +216,7 @@ import {Configuration, ExportApi} from '@croct/export';
     }
 })();
 ```
+
 
 #### Exporting Users
 
@@ -239,6 +248,7 @@ import {Configuration, ExportApi} from '@croct/export';
 })();
 ```
 
+
 ## API Reference
 
 This reference documents all the methods available in the Export API.
@@ -255,6 +265,7 @@ The constructor has the following signature:
 constructor(configuration: Configuration);
 ```
 
+
 #### Code Sample
 
 Here's a minimal example showing how initialize the client:
@@ -262,6 +273,7 @@ Here's a minimal example showing how initialize the client:
 ```ts
 const api = new ExportApi(new Configuration({apiKey: '00000000-0000-0000-0000-000000000000'}));
 ```
+
 
 ### exportEvents
 
@@ -274,6 +286,7 @@ The `exportEvents` method has the following signature:
 ```ts
 exportEvents(options: EventExportOptions): Promise<{data: {items: Event[], nextCursor: string}}>;
 ```
+
 
 These are the currently supported options:
 
@@ -309,8 +322,6 @@ The list possible event types are:
 | `goalCompleted`        | 1.0.0         |
 | `eventOccurred`        | 1.0.0         |
 
-For more details about data returned, please refer to the [type definition](#link-to-source).
-
 #### Code Sample
 
 Here's a full example showing how to export events:
@@ -341,6 +352,7 @@ import {Configuration, ExportApi} from '@croct/export';
 })();
 ```
 
+
 ### exportSessions
 
 This method exports sessions from an application.
@@ -353,6 +365,7 @@ The `exportSessions` method has the following signature:
 exportEvents(options: SessionExportOptions): Promise<{data: {items: Session[], nextCursor: string}}>;
 ```
 
+
 These are the currently supported options:
 
 | Option     | Type     | Description
@@ -361,8 +374,6 @@ These are the currently supported options:
 | `cursor`   | string   | The cursor from the previous request to use as a starting point for export. By default, it points to the initial page.
 | `start`    | number   | The start timestamp in seconds since epoch relative to the session's close time, inclusive. By default, the start of the time window is unbounded.
 | `end`      | number   | The end timestamp in seconds since epoch relative to the session's close time, exclusive. By default, the end of the time window is unbounded.
-
-For more details about data returned, please refer to the [type definition](#link-to-source).
 
 #### Code Sample
 
@@ -393,6 +404,7 @@ import {Configuration, ExportApi} from '@croct/export';
 })();
 ```
 
+
 ### exportUsers
 
 This method exports users from a workspace.
@@ -402,8 +414,9 @@ This method exports users from a workspace.
 The `exportUsers` method has the following signature:
 
 ```ts
-exportEvents(options: UserExportOptions): Promise<{data: {items: User[], nextCursor: string}}>;
+exportUsers(options: UserExportOptions): Promise<{data: {items: User[], nextCursor: string}}>;
 ```
+
 
 These are the currently supported options:
 
@@ -413,8 +426,6 @@ These are the currently supported options:
 | `cursor`   | string   | The cursor from the previous request to use as a starting point for export. By default, it points to the initial page.
 | `start`    | number   | The start timestamp in seconds since epoch relative to the user's last modified time, inclusive. By default, the start of the time window is unbounded.
 | `end`      | number   | The end timestamp in seconds since epoch relative to the user's last modified time, exclusive. By default, the end of the time window is unbounded.
-
-For more details about data returned, please refer to the [type definition](#link-to-source).
 
 #### Code Sample
 
@@ -444,6 +455,7 @@ import {Configuration, ExportApi} from '@croct/export';
     }
 })();
 ```
+
 
 ## Support
 
