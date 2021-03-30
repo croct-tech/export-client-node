@@ -273,18 +273,18 @@ This method exports events from an application.
 The `exportEvents` method has the following signature:
 
 ```ts
-exportEvents(options: EventExportOptions): Promise<{data: {items: Event[], nextCursor: string}}>;
+exportEvents(options: EventExportOptions): Promise<{data: EventResponse}>;
 ```
 
 These are the currently supported options:
 
-| Option     | Type     | Description
-|------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------
-| `pageSize` | int32   | The maximum number of events to export per request, limited to 1000. By default, 100.
-| `cursor`   | string   | The cursor from the previous request to use as a starting point for export. By default, it points to the initial page.
-| `start`    | int64   | The start timestamp in seconds since epoch relative to the event timestamp, inclusive. By default, the start of the time window is unbounded.
-| `end`      | int64   | The end timestamp in seconds since epoch relative to the event timestamp, exclusive. By default, the end of the time window is unbounded.
-| `events`   | string[] | The types of events to export. By default, include all types listed bellow.
+| Option     | Type        | Description
+|------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------
+| `pageSize` | int32       | The maximum number of events to export per request, limited to 1000. By default, 100.
+| `cursor`   | string      | The cursor from the previous request to use as a starting point for export. By default, it points to the initial page.
+| `start`    | int64       | The start timestamp in seconds since epoch relative to the event timestamp, inclusive. By default, the start of the time window is unbounded.
+| `end`      | int64       | The end timestamp in seconds since epoch relative to the event timestamp, exclusive. By default, the end of the time window is unbounded.
+| `events`   | EventType[] | The types of events to export. By default, include all types listed bellow.
 
 The list possible event types are:
 
@@ -353,7 +353,7 @@ This method exports sessions from an application.
 The `exportSessions` method has the following signature:
 
 ```ts
-exportEvents(options: SessionExportOptions): Promise<{data: {items: Session[], nextCursor: string}}>;
+exportSessions(options: SessionExportOptions): Promise<{data: SessionResponse}>;
 ```
 
 These are the currently supported options:
@@ -403,15 +403,15 @@ This method exports users from a workspace.
 The `exportUsers` method has the following signature:
 
 ```ts
-exportUsers(options: UserExportOptions): Promise<{data: {items: User[], nextCursor: string}}>;
+exportUsers(options: UserExportOptions): Promise<{data: UserResponse}>;
 ```
 
 These are the currently supported options:
 
-| Option     | Type     | Description
-|------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------
+| Option     | Type    | Description
+|------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------
 | `pageSize` | int32   | The maximum number of users to export per request, limited to 1000. By default, 100.
-| `cursor`   | string   | The cursor from the previous request to use as a starting point for export. By default, it points to the initial page.
+| `cursor`   | string  | The cursor from the previous request to use as a starting point for export. By default, it points to the initial page.
 | `start`    | int64   | The start timestamp in seconds since epoch relative to the user's last modified time, inclusive. By default, the start of the time window is unbounded.
 | `end`      | int64   | The end timestamp in seconds since epoch relative to the user's last modified time, exclusive. By default, the end of the time window is unbounded.
 
