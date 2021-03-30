@@ -9,8 +9,8 @@
 </p>
 
 <p align="center">
-    <img alt="Language" src="https://img.shields.io/badge/language-Node-blue" />
     <a href="https://www.npmjs.com/package/@croct/export"><img alt="Version" src="https://img.shields.io/npm/v/@croct/export"/></a>
+    <a href="https://github.com/croct-tech/export-client-node/actions/workflows/validations.yaml"><img alt="Validations" src="https://github.com/croct-tech/export-client-node/actions/workflows/validations.yaml/badge.svg"/></a>
     <br />
     <br />
     <a href="https://github.com/croct-tech/exporter-client-node/releases">📦 Releases</a>
