@@ -280,10 +280,10 @@ These are the currently supported options:
 
 | Option     | Type     | Description
 |------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------
-| `pageSize` | number   | The maximum number of events to export per request, limited to 1000. By default, 100.
+| `pageSize` | int32   | The maximum number of events to export per request, limited to 1000. By default, 100.
 | `cursor`   | string   | The cursor from the previous request to use as a starting point for export. By default, it points to the initial page.
-| `start`    | number   | The start timestamp in seconds since epoch relative to the event timestamp, inclusive. By default, the start of the time window is unbounded.
-| `end`      | number   | The end timestamp in seconds since epoch relative to the event timestamp, exclusive. By default, the end of the time window is unbounded.
+| `start`    | int64   | The start timestamp in seconds since epoch relative to the event timestamp, inclusive. By default, the start of the time window is unbounded.
+| `end`      | int64   | The end timestamp in seconds since epoch relative to the event timestamp, exclusive. By default, the end of the time window is unbounded.
 | `events`   | string[] | The types of events to export. By default, include all types listed bellow.
 
 The list possible event types are:
@@ -360,10 +360,10 @@ These are the currently supported options:
 
 | Option     | Type     | Description
 |------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------
-| `pageSize` | number   | The maximum number of sessions to export per request, limited to 1000. By default, 100.
+| `pageSize` | int32   | The maximum number of sessions to export per request, limited to 1000. By default, 100.
 | `cursor`   | string   | The cursor from the previous request to use as a starting point for export. By default, it points to the initial page.
-| `start`    | number   | The start timestamp in seconds since epoch relative to the session's close time, inclusive. By default, the start of the time window is unbounded.
-| `end`      | number   | The end timestamp in seconds since epoch relative to the session's close time, exclusive. By default, the end of the time window is unbounded.
+| `start`    | int64   | The start timestamp in seconds since epoch relative to the session's close time, inclusive. By default, the start of the time window is unbounded.
+| `end`      | int64   | The end timestamp in seconds since epoch relative to the session's close time, exclusive. By default, the end of the time window is unbounded.
 
 #### Code Sample
 
@@ -410,10 +410,10 @@ These are the currently supported options:
 
 | Option     | Type     | Description
 |------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------
-| `pageSize` | number   | The maximum number of users to export per request, limited to 1000. By default, 100.
+| `pageSize` | int32   | The maximum number of users to export per request, limited to 1000. By default, 100.
 | `cursor`   | string   | The cursor from the previous request to use as a starting point for export. By default, it points to the initial page.
-| `start`    | number   | The start timestamp in seconds since epoch relative to the user's last modified time, inclusive. By default, the start of the time window is unbounded.
-| `end`      | number   | The end timestamp in seconds since epoch relative to the user's last modified time, exclusive. By default, the end of the time window is unbounded.
+| `start`    | int64   | The start timestamp in seconds since epoch relative to the user's last modified time, inclusive. By default, the start of the time window is unbounded.
+| `end`      | int64   | The end timestamp in seconds since epoch relative to the user's last modified time, exclusive. By default, the end of the time window is unbounded.
 
 #### Code Sample
 
