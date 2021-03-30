@@ -315,7 +315,7 @@ The list possible event types are:
 Here's a full example showing how to export events:
 
 ```ts
-import {Configuration, ExportApi} from '@croct/export';
+import {Configuration, EventType, ExportApi} from '@croct/export';
 
 (async function run(): Promise<void> {
     const api = new ExportApi(new Configuration({apiKey: '00000000-0000-0000-0000-000000000000'}));
@@ -329,7 +329,11 @@ import {Configuration, ExportApi} from '@croct/export';
             pageSize: 100,
             start: 1440990000,
             end: 1440990000 + 86_400,
-            types: ['productViewed', 'checkoutStarted', 'orderPlaced'],
+            types: [
+                EventType.PRODUCT_VIEWED,
+                EventType.CHECKOUT_STARTED,
+                EventType.ORDER_PLACED,
+            ],
         });
 
         console.log(events);
