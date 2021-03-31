@@ -1,6 +1,6 @@
 {
   "name": "@croct/export",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Node.js client for the Croct Export API.",
   "author": {
     "name": "Croct",
