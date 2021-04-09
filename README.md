@@ -329,7 +329,7 @@ import {Configuration, EventType, ExportApi} from '@croct/export';
             pageSize: 100,
             start: 1440990000,
             end: 1440990000 + 86_400,
-            types: [
+            events: [
                 EventType.PRODUCT_VIEWED,
                 EventType.CHECKOUT_STARTED,
                 EventType.ORDER_PLACED,
