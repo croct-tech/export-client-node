@@ -309,6 +309,7 @@ The list possible event types are:
 | `nothingChanged`       | 1.0.0         |
 | `goalCompleted`        | 1.0.0         |
 | `eventOccurred`        | 1.0.0         |
+| `slotPersonalized`     | 1.1.0         |
 
 #### Code Sample
 
