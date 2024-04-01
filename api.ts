@@ -14,14 +14,14 @@
 
 
 import type { Configuration } from './configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from './common';
 import type { RequestArgs } from './base';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, BaseAPI, RequiredError } from './base';
+import { BASE_PATH, COLLECTION_FORMATS, BaseAPI, RequiredError, operationServerMap } from './base';
 
 /**
  * 
@@ -1131,10 +1131,10 @@ export interface Session {
     'client'?: WebClient;
     /**
      * The custom attributes.
-     * @type {{ [key: string]: any | undefined; }}
+     * @type {{ [key: string]: any | undefined | null; }}
      * @memberof Session
      */
-    'attributes'?: { [key: string]: any | undefined; };
+    'attributes'?: { [key: string]: any | undefined | null; };
     /**
      * 
      * @type {SessionStatistics}
@@ -1721,7 +1721,7 @@ export const ExportApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportEvents: async (start?: number, end?: number, pageSize?: number, cursor?: string, events?: Array<EventType>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        exportEvents: async (start?: number, end?: number, pageSize?: number, cursor?: string, events?: Array<EventType>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/events`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -1777,7 +1777,7 @@ export const ExportApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportSessions: async (start?: number, end?: number, pageSize?: number, cursor?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        exportSessions: async (start?: number, end?: number, pageSize?: number, cursor?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/session`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -1829,7 +1829,7 @@ export const ExportApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportUsers: async (start?: number, end?: number, pageSize?: number, cursor?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        exportUsers: async (start?: number, end?: number, pageSize?: number, cursor?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/user`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -1892,9 +1892,11 @@ export const ExportApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async exportEvents(start?: number, end?: number, pageSize?: number, cursor?: string, events?: Array<EventType>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EventResponse>> {
+        async exportEvents(start?: number, end?: number, pageSize?: number, cursor?: string, events?: Array<EventType>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EventResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.exportEvents(start, end, pageSize, cursor, events, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ExportApi.exportEvents']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -1905,9 +1907,11 @@ export const ExportApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async exportSessions(start?: number, end?: number, pageSize?: number, cursor?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SessionResponse>> {
+        async exportSessions(start?: number, end?: number, pageSize?: number, cursor?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SessionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.exportSessions(start, end, pageSize, cursor, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ExportApi.exportSessions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -1918,9 +1922,11 @@ export const ExportApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async exportUsers(start?: number, end?: number, pageSize?: number, cursor?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserResponse>> {
+        async exportUsers(start?: number, end?: number, pageSize?: number, cursor?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.exportUsers(start, end, pageSize, cursor, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ExportApi.exportUsers']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -1934,40 +1940,30 @@ export const ExportApiFactory = function (configuration?: Configuration, basePat
     return {
         /**
          * 
-         * @param {number} [start] 
-         * @param {number} [end] 
-         * @param {number} [pageSize] 
-         * @param {string} [cursor] 
-         * @param {Array<EventType>} [events] 
+         * @param {ExportApiExportEventsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportEvents(start?: number, end?: number, pageSize?: number, cursor?: string, events?: Array<EventType>, options?: any): AxiosPromise<EventResponse> {
-            return localVarFp.exportEvents(start, end, pageSize, cursor, events, options).then((request) => request(axios, basePath));
+        exportEvents(requestParameters: ExportApiExportEventsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<EventResponse> {
+            return localVarFp.exportEvents(requestParameters.start, requestParameters.end, requestParameters.pageSize, requestParameters.cursor, requestParameters.events, options).then((request) => request(axios, basePath));
         },
         /**
          * 
-         * @param {number} [start] 
-         * @param {number} [end] 
-         * @param {number} [pageSize] 
-         * @param {string} [cursor] 
+         * @param {ExportApiExportSessionsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportSessions(start?: number, end?: number, pageSize?: number, cursor?: string, options?: any): AxiosPromise<SessionResponse> {
-            return localVarFp.exportSessions(start, end, pageSize, cursor, options).then((request) => request(axios, basePath));
+        exportSessions(requestParameters: ExportApiExportSessionsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<SessionResponse> {
+            return localVarFp.exportSessions(requestParameters.start, requestParameters.end, requestParameters.pageSize, requestParameters.cursor, options).then((request) => request(axios, basePath));
         },
         /**
          * 
-         * @param {number} [start] 
-         * @param {number} [end] 
-         * @param {number} [pageSize] 
-         * @param {string} [cursor] 
+         * @param {ExportApiExportUsersRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportUsers(start?: number, end?: number, pageSize?: number, cursor?: string, options?: any): AxiosPromise<UserResponse> {
-            return localVarFp.exportUsers(start, end, pageSize, cursor, options).then((request) => request(axios, basePath));
+        exportUsers(requestParameters: ExportApiExportUsersRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<UserResponse> {
+            return localVarFp.exportUsers(requestParameters.start, requestParameters.end, requestParameters.pageSize, requestParameters.cursor, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -2098,7 +2094,7 @@ export class ExportApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ExportApi
      */
-    public exportEvents(requestParameters: ExportApiExportEventsRequest = {}, options?: AxiosRequestConfig) {
+    public exportEvents(requestParameters: ExportApiExportEventsRequest = {}, options?: RawAxiosRequestConfig) {
         return ExportApiFp(this.configuration).exportEvents(requestParameters.start, requestParameters.end, requestParameters.pageSize, requestParameters.cursor, requestParameters.events, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2109,7 +2105,7 @@ export class ExportApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ExportApi
      */
-    public exportSessions(requestParameters: ExportApiExportSessionsRequest = {}, options?: AxiosRequestConfig) {
+    public exportSessions(requestParameters: ExportApiExportSessionsRequest = {}, options?: RawAxiosRequestConfig) {
         return ExportApiFp(this.configuration).exportSessions(requestParameters.start, requestParameters.end, requestParameters.pageSize, requestParameters.cursor, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2120,9 +2116,10 @@ export class ExportApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ExportApi
      */
-    public exportUsers(requestParameters: ExportApiExportUsersRequest = {}, options?: AxiosRequestConfig) {
+    public exportUsers(requestParameters: ExportApiExportUsersRequest = {}, options?: RawAxiosRequestConfig) {
         return ExportApiFp(this.configuration).exportUsers(requestParameters.start, requestParameters.end, requestParameters.pageSize, requestParameters.cursor, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
 
 
