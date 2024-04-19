@@ -215,7 +215,7 @@ import {Configuration, ExportApi} from '@croct/export';
 The `exportUsers` method exports users from the workspace associated with the API key, optionally filtered by 
 a time window relative to the user's last modified time.
 
-The following example demonstrates how to export sessions in batches of 100:
+The following example demonstrates how to export profiles in batches of 100:
 
 ```ts
 import {Configuration, ExportApi} from '@croct/export';
