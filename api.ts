@@ -24,7 +24,7 @@ import type { RequestArgs } from './base';
 import { BASE_PATH, COLLECTION_FORMATS, BaseAPI, RequiredError, operationServerMap } from './base';
 
 /**
- * 
+ *
  * @export
  * @interface ApiProblem
  */
@@ -32,19 +32,19 @@ export interface ApiProblem {
     [key: string]: any;
 
     /**
-     * 
+     *
      * @type {string}
      * @memberof ApiProblem
      */
     'title': string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ApiProblem
      */
     'type': string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ApiProblem
      */
@@ -69,7 +69,7 @@ export interface Browser {
      */
     'version': string | null;
     /**
-     * 
+     *
      * @type {BrowserType}
      * @memberof Browser
      */
@@ -95,7 +95,7 @@ export type BrowserType = typeof BrowserType[keyof typeof BrowserType];
 
 
 /**
- * 
+ *
  * @export
  * @interface Campaign
  */
@@ -211,7 +211,7 @@ export interface CartItem {
      */
     'index': number;
     /**
-     * 
+     *
      * @type {ProductDetails}
      * @memberof CartItem
      */
@@ -248,7 +248,7 @@ export interface CartItem {
  */
 export interface CartModified extends EventPayload {
     /**
-     * 
+     *
      * @type {Cart}
      * @memberof CartModified
      */
@@ -261,7 +261,7 @@ export interface CartModified extends EventPayload {
  */
 export interface CartViewed extends EventPayload {
     /**
-     * 
+     *
      * @type {Cart}
      * @memberof CartViewed
      */
@@ -274,7 +274,7 @@ export interface CartViewed extends EventPayload {
  */
 export interface CheckoutStarted extends EventPayload {
     /**
-     * 
+     *
      * @type {Cart}
      * @memberof CheckoutStarted
      */
@@ -293,7 +293,7 @@ export interface CheckoutStarted extends EventPayload {
  */
 export interface ClientDetected extends EventPayload {
     /**
-     * 
+     *
      * @type {WebClient}
      * @memberof ClientDetected
      */
@@ -318,13 +318,13 @@ export interface Device {
      */
     'vendor': string | null;
     /**
-     * 
+     *
      * @type {DeviceCategory}
      * @memberof Device
      */
     'category': DeviceCategory;
     /**
-     * 
+     *
      * @type {OperatingSystem}
      * @memberof Device
      */
@@ -351,7 +351,7 @@ export type DeviceCategory = typeof DeviceCategory[keyof typeof DeviceCategory];
 
 
 /**
- * 
+ *
  * @export
  * @interface Event
  */
@@ -375,13 +375,13 @@ export interface Event {
      */
     'timestamp': number;
     /**
-     * 
+     *
      * @type {EventContext}
      * @memberof Event
      */
     'context': EventContext | null;
     /**
-     * 
+     *
      * @type {EventPayload}
      * @memberof Event
      */
@@ -394,13 +394,13 @@ export interface Event {
  */
 export interface EventContext {
     /**
-     * 
+     *
      * @type {string}
      * @memberof EventContext
      */
     'type': string;
     /**
-     * 
+     *
      * @type {{ [key: string]: string | undefined; }}
      * @memberof EventContext
      */
@@ -456,82 +456,82 @@ export interface EventOccurred extends EventPayload {
  */
 export interface EventPayload {
     /**
-     * 
+     *
      * @type {string}
      * @memberof EventPayload
      */
     '@type': string;
 }
 /**
- * 
+ *
  * @export
  * @interface EventResponse
  */
 export interface EventResponse {
     /**
-     * 
+     *
      * @type {Array<Event>}
      * @memberof EventResponse
      */
     'items': Array<Event>;
     /**
-     * 
+     *
      * @type {EventResponseMetadata}
      * @memberof EventResponse
      */
     'metadata': EventResponseMetadata;
     /**
-     * 
+     *
      * @type {string}
      * @memberof EventResponse
      */
     'nextCursor': string;
 }
 /**
- * 
+ *
  * @export
  * @interface EventResponseMetadata
  */
 export interface EventResponseMetadata {
     /**
-     * 
+     *
      * @type {string}
      * @memberof EventResponseMetadata
      */
     'organizationName': string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof EventResponseMetadata
      */
     'organizationSlug': string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof EventResponseMetadata
      */
     'workspaceName': string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof EventResponseMetadata
      */
     'workspaceSlug': string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof EventResponseMetadata
      */
     'applicationName': string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof EventResponseMetadata
      */
     'applicationSlug': string;
 }
 /**
- * 
+ *
  * @export
  * @enum {string}
  */
@@ -560,8 +560,25 @@ export const EventType = {
 } as const;
 
 export type EventType = typeof EventType[keyof typeof EventType];
-
-
+/**
+ * The official currency used in the location.
+ * @export
+ * @interface Currency
+ */
+export interface Currency {
+    /**
+     * The common name of the currency. For example, 'US Dollar'.
+     * @type {string}
+     * @memberOf Currency
+     */
+    'name': string | null;
+    /**
+     * The currency code. For example, USD.
+     * @type {string}
+     * @memberOf Currency
+     */
+    'code': string | null;
+}
 /**
  * A geographic location represented by a latitude and longitude coordinates pair.
  * @export
@@ -613,7 +630,7 @@ export interface GoalCompleted extends EventPayload {
  */
 export interface Location {
     /**
-     * 
+     *
      * @type {LocationContinent}
      * @memberof Location
      */
@@ -625,7 +642,7 @@ export interface Location {
      */
     'country': string | null;
     /**
-     * 
+     *
      * @type {Region}
      * @memberof Location
      */
@@ -649,13 +666,39 @@ export interface Location {
      */
     'timezone': string | null;
     /**
-     * 
+     *
      * @type {GeoPoint}
      * @memberof Location
      */
     'coordinates': GeoPoint | null;
     /**
-     * 
+     *
+     * @type {Currency}
+     * @memberOf Location
+     */
+    'currency': Currency | null;
+    /**
+     * The approximate number of people living within the borders of the represented location.
+     */
+    'population': number | null;
+    /**
+     * The international dialing code for this location. For example, '+1' or '+55'.
+     */
+    'phoneCode': string | null;
+    /**
+     * The general postal code for the location, such as a starting range, but it may also represent another relevant code for the area. For example, '12345-678'.
+     */
+    'postalCode': string | null;
+    /**
+     * A list of tags addressing different aspects of a location. For example, 'beach' or 'ocean'.
+     */
+    'tags': string[];
+    /**
+     * A list of locales following the ISO 639-1 and ISO 3166-1 standards, representing the languages spoken in the location, ordered from the most spoken to the least spoken. For example, 'pt-br' or 'en-us'.
+     */
+    'languages': string[];
+    /**
+     *
      * @type {LocationSource}
      * @memberof Location
      */
@@ -689,7 +732,7 @@ export type LocationContinent = typeof LocationContinent[keyof typeof LocationCo
  */
 export interface LocationDetected extends EventPayload {
     /**
-     * 
+     *
      * @type {Location}
      * @memberof LocationDetected
      */
@@ -823,7 +866,7 @@ export interface Order {
      */
     'installments': number | null;
     /**
-     * 
+     *
      * @type {OrderStatus}
      * @memberof Order
      */
@@ -844,7 +887,7 @@ export interface OrderItem {
      */
     'index': number;
     /**
-     * 
+     *
      * @type {ProductDetails}
      * @memberof OrderItem
      */
@@ -881,7 +924,7 @@ export interface OrderItem {
  */
 export interface OrderPlaced extends EventPayload {
     /**
-     * 
+     *
      * @type {Order}
      * @memberof OrderPlaced
      */
@@ -1032,7 +1075,7 @@ export interface ProductDetails {
  */
 export interface ProductViewed extends EventPayload {
     /**
-     * 
+     *
      * @type {ProductDetails}
      * @memberof ProductViewed
      */
@@ -1058,7 +1101,7 @@ export interface Region {
     'code': string | null;
 }
 /**
- * 
+ *
  * @export
  * @interface Session
  */
@@ -1088,7 +1131,7 @@ export interface Session {
      */
     'isAnonymous'?: boolean;
     /**
-     * 
+     *
      * @type {SessionWindow}
      * @memberof Session
      */
@@ -1112,19 +1155,19 @@ export interface Session {
      */
     'landingPageUrl'?: string | null;
     /**
-     * 
+     *
      * @type {Campaign}
      * @memberof Session
      */
     'campaign'?: Campaign;
     /**
-     * 
+     *
      * @type {Location}
      * @memberof Session
      */
     'location'?: Location;
     /**
-     * 
+     *
      * @type {WebClient}
      * @memberof Session
      */
@@ -1136,26 +1179,26 @@ export interface Session {
      */
     'attributes'?: { [key: string]: any | undefined | null; };
     /**
-     * 
+     *
      * @type {SessionStatistics}
      * @memberof Session
      */
     'statistics'?: SessionStatistics;
 }
 /**
- * 
+ *
  * @export
  * @interface SessionResponse
  */
 export interface SessionResponse {
     /**
-     * 
+     *
      * @type {Array<Session>}
      * @memberof SessionResponse
      */
     'items': Array<Session>;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SessionResponse
      */
@@ -1193,13 +1236,13 @@ export interface SessionStatistics {
  */
 export interface SessionWindow {
     /**
-     * 
+     *
      * @type {number}
      * @memberof SessionWindow
      */
     'start'?: number;
     /**
-     * 
+     *
      * @type {number}
      * @memberof SessionWindow
      */
@@ -1218,13 +1261,13 @@ export interface SlotPersonalized {
      */
     '@type': string;
     /**
-     * 
+     *
      * @type {SlotPersonalizedPersonalization}
      * @memberof SlotPersonalized
      */
     'personalization': SlotPersonalizedPersonalization;
     /**
-     * 
+     *
      * @type {SlotPersonalizedMetadata}
      * @memberof SlotPersonalized
      */
@@ -1280,7 +1323,7 @@ export interface SlotPersonalizedMetadata {
     'variantName': string | null;
 }
 /**
- * 
+ *
  * @export
  * @interface SlotPersonalizedPersonalization
  */
@@ -1310,14 +1353,14 @@ export interface SlotPersonalizedPersonalization {
      */
     'contentId': string;
     /**
-     * 
+     *
      * @type {SlotPersonalizedPersonalizationAssignedVariant}
      * @memberof SlotPersonalizedPersonalization
      */
     'assignedVariant': SlotPersonalizedPersonalizationAssignedVariant | null;
 }
 /**
- * 
+ *
  * @export
  * @interface SlotPersonalizedPersonalizationAssignedVariant
  */
@@ -1394,7 +1437,7 @@ export interface TabVisibilityChanged extends EventPayload {
      */
     'tabId': string;
     /**
-     * 
+     *
      * @type {TabVisibility}
      * @memberof TabVisibilityChanged
      */
@@ -1420,7 +1463,7 @@ export interface TestGroupAssigned extends EventPayload {
     'groupId': string;
 }
 /**
- * 
+ *
  * @export
  * @interface User
  */
@@ -1486,7 +1529,7 @@ export interface User {
      */
     'alternatePhone'?: string | null;
     /**
-     * 
+     *
      * @type {UserAddress}
      * @memberof User
      */
@@ -1540,7 +1583,7 @@ export interface User {
      */
     'lastModifiedTime'?: number;
     /**
-     * 
+     *
      * @type {UserStatistics}
      * @memberof User
      */
@@ -1553,56 +1596,56 @@ export interface User {
  */
 export interface UserAddress {
     /**
-     * 
+     *
      * @type {string}
      * @memberof UserAddress
      */
     'street'?: string | null;
     /**
-     * 
+     *
      * @type {string}
      * @memberof UserAddress
      */
     'district'?: string | null;
     /**
-     * 
+     *
      * @type {string}
      * @memberof UserAddress
      */
     'city'?: string | null;
     /**
-     * 
+     *
      * @type {string}
      * @memberof UserAddress
      */
     'region'?: string | null;
     /**
-     * 
+     *
      * @type {string}
      * @memberof UserAddress
      */
     'country'?: string | null;
     /**
-     * 
+     *
      * @type {string}
      * @memberof UserAddress
      */
     'postalCode'?: string | null;
 }
 /**
- * 
+ *
  * @export
  * @interface UserResponse
  */
 export interface UserResponse {
     /**
-     * 
+     *
      * @type {Array<User>}
      * @memberof UserResponse
      */
     'items': Array<User>;
     /**
-     * 
+     *
      * @type {string}
      * @memberof UserResponse
      */
@@ -1673,13 +1716,13 @@ export interface UserStatistics {
  */
 export interface WebClient {
     /**
-     * 
+     *
      * @type {Browser}
      * @memberof WebClient
      */
     'browser': Browser;
     /**
-     * 
+     *
      * @type {Device}
      * @memberof WebClient
      */
@@ -1712,12 +1755,12 @@ export interface WebContext extends EventContext {
 export const ExportApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * 
-         * @param {number} [start] 
-         * @param {number} [end] 
-         * @param {number} [pageSize] 
-         * @param {string} [cursor] 
-         * @param {Array<EventType>} [events] 
+         *
+         * @param {number} [start]
+         * @param {number} [end]
+         * @param {number} [pageSize]
+         * @param {string} [cursor]
+         * @param {Array<EventType>} [events]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1758,7 +1801,7 @@ export const ExportApiAxiosParamCreator = function (configuration?: Configuratio
             }
 
 
-    
+
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1769,11 +1812,11 @@ export const ExportApiAxiosParamCreator = function (configuration?: Configuratio
             };
         },
         /**
-         * 
-         * @param {number} [start] 
-         * @param {number} [end] 
-         * @param {number} [pageSize] 
-         * @param {string} [cursor] 
+         *
+         * @param {number} [start]
+         * @param {number} [end]
+         * @param {number} [pageSize]
+         * @param {string} [cursor]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1810,7 +1853,7 @@ export const ExportApiAxiosParamCreator = function (configuration?: Configuratio
             }
 
 
-    
+
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1821,11 +1864,11 @@ export const ExportApiAxiosParamCreator = function (configuration?: Configuratio
             };
         },
         /**
-         * 
-         * @param {number} [start] 
-         * @param {number} [end] 
-         * @param {number} [pageSize] 
-         * @param {string} [cursor] 
+         *
+         * @param {number} [start]
+         * @param {number} [end]
+         * @param {number} [pageSize]
+         * @param {string} [cursor]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1862,7 +1905,7 @@ export const ExportApiAxiosParamCreator = function (configuration?: Configuratio
             }
 
 
-    
+
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1883,12 +1926,12 @@ export const ExportApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ExportApiAxiosParamCreator(configuration)
     return {
         /**
-         * 
-         * @param {number} [start] 
-         * @param {number} [end] 
-         * @param {number} [pageSize] 
-         * @param {string} [cursor] 
-         * @param {Array<EventType>} [events] 
+         *
+         * @param {number} [start]
+         * @param {number} [end]
+         * @param {number} [pageSize]
+         * @param {string} [cursor]
+         * @param {Array<EventType>} [events]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1899,11 +1942,11 @@ export const ExportApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * 
-         * @param {number} [start] 
-         * @param {number} [end] 
-         * @param {number} [pageSize] 
-         * @param {string} [cursor] 
+         *
+         * @param {number} [start]
+         * @param {number} [end]
+         * @param {number} [pageSize]
+         * @param {string} [cursor]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1914,11 +1957,11 @@ export const ExportApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * 
-         * @param {number} [start] 
-         * @param {number} [end] 
-         * @param {number} [pageSize] 
-         * @param {string} [cursor] 
+         *
+         * @param {number} [start]
+         * @param {number} [end]
+         * @param {number} [pageSize]
+         * @param {string} [cursor]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1939,7 +1982,7 @@ export const ExportApiFactory = function (configuration?: Configuration, basePat
     const localVarFp = ExportApiFp(configuration)
     return {
         /**
-         * 
+         *
          * @param {ExportApiExportEventsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1948,7 +1991,7 @@ export const ExportApiFactory = function (configuration?: Configuration, basePat
             return localVarFp.exportEvents(requestParameters.start, requestParameters.end, requestParameters.pageSize, requestParameters.cursor, requestParameters.events, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
+         *
          * @param {ExportApiExportSessionsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1957,7 +2000,7 @@ export const ExportApiFactory = function (configuration?: Configuration, basePat
             return localVarFp.exportSessions(requestParameters.start, requestParameters.end, requestParameters.pageSize, requestParameters.cursor, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
+         *
          * @param {ExportApiExportUsersRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1975,35 +2018,35 @@ export const ExportApiFactory = function (configuration?: Configuration, basePat
  */
 export interface ExportApiExportEventsRequest {
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExportApiExportEvents
      */
     readonly start?: number
 
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExportApiExportEvents
      */
     readonly end?: number
 
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExportApiExportEvents
      */
     readonly pageSize?: number
 
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExportApiExportEvents
      */
     readonly cursor?: string
 
     /**
-     * 
+     *
      * @type {Array<EventType>}
      * @memberof ExportApiExportEvents
      */
@@ -2017,28 +2060,28 @@ export interface ExportApiExportEventsRequest {
  */
 export interface ExportApiExportSessionsRequest {
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExportApiExportSessions
      */
     readonly start?: number
 
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExportApiExportSessions
      */
     readonly end?: number
 
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExportApiExportSessions
      */
     readonly pageSize?: number
 
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExportApiExportSessions
      */
@@ -2052,28 +2095,28 @@ export interface ExportApiExportSessionsRequest {
  */
 export interface ExportApiExportUsersRequest {
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExportApiExportUsers
      */
     readonly start?: number
 
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExportApiExportUsers
      */
     readonly end?: number
 
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExportApiExportUsers
      */
     readonly pageSize?: number
 
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExportApiExportUsers
      */
@@ -2088,7 +2131,7 @@ export interface ExportApiExportUsersRequest {
  */
 export class ExportApi extends BaseAPI {
     /**
-     * 
+     *
      * @param {ExportApiExportEventsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2099,7 +2142,7 @@ export class ExportApi extends BaseAPI {
     }
 
     /**
-     * 
+     *
      * @param {ExportApiExportSessionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2110,7 +2153,7 @@ export class ExportApi extends BaseAPI {
     }
 
     /**
-     * 
+     *
      * @param {ExportApiExportUsersRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
