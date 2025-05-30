@@ -1125,11 +1125,11 @@ export interface Session {
      */
     'parentId'?: string | null;
     /**
-     * The flag that indicates whether the user is anonymous.
-     * @type {boolean}
+     * The external user ID that is used to identify the user on the application side, unique across the workspace. It is always null for anonymous users.
+     * @type {string}
      * @memberof Session
      */
-    'isAnonymous'?: boolean;
+    'externalUserId'?: string | null;
     /**
      *
      * @type {SessionWindow}
