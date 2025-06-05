@@ -254,6 +254,20 @@ export interface CartModified extends EventPayload {
      */
     'cart': Cart;
 }
+
+/**
+ * An event recording that a shopping cart was abandoned.
+ * @export
+ * @interface CartAbandoned
+ */
+export interface CartAbandoned extends EventPayload {
+    /**
+     *
+     * @type {Cart}
+     * @memberof CartAbanoned
+     */
+    'cart': Cart;
+}
 /**
  * An event recording that a shopping cart was viewed.
  * @export
@@ -537,6 +551,7 @@ export const EventType = {
     PAGE_OPENED: 'pageOpened',
     PAGE_LOADED: 'pageLoaded',
     PRODUCT_VIEWED: 'productViewed',
+    CART_ABANDONED: 'cartAbandoned',
     CART_VIEWED: 'cartViewed',
     CART_MODIFIED: 'cartModified',
     CHECKOUT_STARTED: 'checkoutStarted',

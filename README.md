@@ -301,6 +301,7 @@ The list possible event types are:
 | `pageOpened`           | 1.0.0         |
 | `pageLoaded`           | 1.0.0         |
 | `productViewed`        | 1.0.0         |
+| `cartAbandoned`        | 1.0.0         |
 | `cartViewed`           | 1.0.0         |
 | `cartModified`         | 1.0.0         |
 | `checkoutStarted`      | 1.0.0         |
