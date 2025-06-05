@@ -300,6 +300,7 @@ The list possible event types are:
 | `clientDetected`       | 1.0.0         |
 | `pageOpened`           | 1.0.0         |
 | `pageLoaded`           | 1.0.0         |
+| `productAbandoned`     | 1.0.0         |
 | `productViewed`        | 1.0.0         |
 | `cartAbandoned`        | 1.0.0         |
 | `cartViewed`           | 1.0.0         |

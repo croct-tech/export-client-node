@@ -550,6 +550,7 @@ export const EventType = {
     CLIENT_DETECTED: 'clientDetected',
     PAGE_OPENED: 'pageOpened',
     PAGE_LOADED: 'pageLoaded',
+    PRODUCT_ABANDONED: 'productAbandoned',
     PRODUCT_VIEWED: 'productViewed',
     CART_ABANDONED: 'cartAbandoned',
     CART_VIEWED: 'cartViewed',
@@ -1028,6 +1029,25 @@ export interface ProductDetails {
      * @memberof ProductDetails
      */
     'imageUrl': string | null;
+}
+/**
+ * An event recording that a shopping cart item was abandoned.
+ * @export
+ * @interface ProductAbandoned
+ */
+export interface ProductAbandoned extends EventPayload {
+    /**
+     *
+     * @type {Cart}
+     * @memberof ProductAbandoned
+     */
+    'cart': Cart;
+    /**
+     *
+     * @type {CartItem}
+     * @memberof ProductAbandoned
+     */
+    'cartItem': CartItem;
 }
 /**
  * An event recording that a shopping cart was modified.
