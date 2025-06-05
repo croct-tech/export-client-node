@@ -254,7 +254,6 @@ export interface CartModified extends EventPayload {
      */
     'cart': Cart;
 }
-
 /**
  * An event recording that a shopping cart was abandoned.
  * @export
