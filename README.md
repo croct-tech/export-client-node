@@ -215,7 +215,7 @@ import {Configuration, ExportApi} from '@croct/export';
 The `exportUsers` method exports users from the workspace associated with the API key, optionally filtered by 
 a time window relative to the user's last modified time.
 
-The following example demonstrates how to export profiles in batches of 100:
+The following example demonstrates how to export sessions in batches of 100:
 
 ```ts
 import {Configuration, ExportApi} from '@croct/export';
@@ -300,12 +300,13 @@ The list possible event types are:
 | `clientDetected`       | 1.0.0         |
 | `pageOpened`           | 1.0.0         |
 | `pageLoaded`           | 1.0.0         |
+| `productAbandoned`     | 1.0.0         |
 | `productViewed`        | 1.0.0         |
+| `cartAbandoned`        | 1.0.0         |
 | `cartViewed`           | 1.0.0         |
 | `cartModified`         | 1.0.0         |
 | `checkoutStarted`      | 1.0.0         |
 | `orderPlaced`          | 1.0.0         |
-| `testGroupAssigned`    | 1.0.0         |
 | `nothingChanged`       | 1.0.0         |
 | `goalCompleted`        | 1.0.0         |
 | `eventOccurred`        | 1.0.0         |
