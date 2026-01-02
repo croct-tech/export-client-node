@@ -10,6 +10,7 @@
   </a>
   <br/>
   <strong>Export API Node Client</strong>
+  <br/>
   Node.js client for the Croct Export API.
 </p>
 
