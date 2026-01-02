@@ -1,6 +1,5 @@
 # CartAbandoned
 
-An event recording that a shopping cart was abandoned.
 
 ## Properties
 

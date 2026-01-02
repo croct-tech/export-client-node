@@ -4,6 +4,8 @@ base.ts
 common.ts
 configuration.ts
 docs/ApiProblem.md
+docs/Audience.md
+docs/AudienceMatched.md
 docs/Browser.md
 docs/BrowserType.md
 docs/Campaign.md
@@ -27,6 +29,7 @@ docs/EventType.md
 docs/ExportApi.md
 docs/GeoPoint.md
 docs/GoalCompleted.md
+docs/LeadGenerated.md
 docs/Location.md
 docs/LocationContinent.md
 docs/LocationDetected.md
@@ -51,11 +54,11 @@ docs/SlotPersonalized.md
 docs/SlotPersonalizedMetadata.md
 docs/SlotPersonalizedPersonalization.md
 docs/SlotPersonalizedPersonalizationAssignedVariant.md
+docs/SlotPersonalizedPersonalizationSlotVersion.md
 docs/TabOpened.md
 docs/TabUrlChanged.md
 docs/TabVisibility.md
 docs/TabVisibilityChanged.md
-docs/TestGroupAssigned.md
 docs/User.md
 docs/UserAddress.md
 docs/UserResponse.md

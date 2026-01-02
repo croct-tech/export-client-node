@@ -1,6 +1,5 @@
 # TabUrlChanged
 
-An event recording that the URL of a tab has changed.
 
 ## Properties
 

@@ -1,6 +1,5 @@
 # OrderPlaced
 
-An event recording that an order was placed.
 
 ## Properties
 

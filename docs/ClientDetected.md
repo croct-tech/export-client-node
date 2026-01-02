@@ -1,6 +1,5 @@
 # ClientDetected
 
-An event recording that the user\'s client was detected.
 
 ## Properties
 

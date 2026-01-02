@@ -1,6 +1,5 @@
 # PageOpened
 
-An event recording that a page was opened.
 
 ## Properties
 

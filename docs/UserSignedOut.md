@@ -1,6 +1,5 @@
 # UserSignedOut
 
-An event recording that a user has signed out.
 
 ## Properties
 

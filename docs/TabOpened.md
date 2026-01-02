@@ -1,6 +1,5 @@
 # TabOpened
 
-An event recording that a new tab was opened.
 
 ## Properties
 

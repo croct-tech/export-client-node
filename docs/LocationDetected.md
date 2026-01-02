@@ -1,6 +1,5 @@
 # LocationDetected
 
-An event recording that the location of a user was detected.
 
 ## Properties
 

@@ -1,21 +1,19 @@
-# CheckoutStarted
+# AudienceMatched
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cart** | [**Cart**](Cart.md) |  | [default to undefined]
-**orderId** | **string** | The ID that uniquely identifies the order across the store. | [default to undefined]
+**audienceIds** | [**Array&lt;Audience&gt;**](Audience.md) |  | [optional] [default to undefined]
 
 ## Example
 
 ```typescript
-import { CheckoutStarted } from '@croct/export';
+import { AudienceMatched } from '@croct/export';
 
-const instance: CheckoutStarted = {
-    cart,
-    orderId,
+const instance: AudienceMatched = {
+    audienceIds,
 };
 ```
 

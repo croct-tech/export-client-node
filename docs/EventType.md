@@ -27,15 +27,15 @@
 
 * `CART_VIEWED` (value: `'productViewed'`)
 
-* `CART_MODIFIED` (value: `'cartViewed'`)
+* `CART_MODIFIED` (value: `'cartAbandoned'`)
 
-* `CHECKOUT_STARTED` (value: `'cartModified'`)
+* `CHECKOUT_STARTED` (value: `'cartViewed'`)
 
-* `ORDER_PLACED` (value: `'checkoutStarted'`)
+* `ORDER_PLACED` (value: `'cartModified'`)
 
-* `TEST_GROUP_ASSIGNED` (value: `'orderPlaced'`)
+* `TEST_GROUP_ASSIGNED` (value: `'checkoutStarted'`)
 
-* `NOTHING_CHANGED` (value: `'testGroupAssigned'`)
+* `NOTHING_CHANGED` (value: `'orderPlaced'`)
 
 * `GOAL_COMPLETED` (value: `'nothingChanged'`)
 
@@ -43,6 +43,10 @@
 
 * `SLOT_PERSONALIZED` (value: `'eventOccurred'`)
 
-* `SLOT_PERSONALIZED` (value: `'slotPersonalized'`)
+* `LEAD_GENERATED` (value: `'slotPersonalized'`)
+
+* `AUDIENCE_MATCHED` (value: `'leadGenerated'`)
+
+* `AUDIENCE_MATCHED` (value: `'audienceMatched'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

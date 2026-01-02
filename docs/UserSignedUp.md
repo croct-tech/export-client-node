@@ -1,6 +1,5 @@
 # UserSignedUp
 
-An event recording that a user has signed up.
 
 ## Properties
 

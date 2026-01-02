@@ -1,6 +1,5 @@
 # GoalCompleted
 
-An event recording a completed activity, such as a purchase.
 
 ## Properties
 

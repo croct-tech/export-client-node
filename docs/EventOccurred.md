@@ -1,6 +1,5 @@
 # EventOccurred
 
-An event recording a domain-specific occurrence.
 
 ## Properties
 

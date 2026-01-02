@@ -1,6 +1,5 @@
 # CartViewed
 
-An event recording that a shopping cart was viewed.
 
 ## Properties
 

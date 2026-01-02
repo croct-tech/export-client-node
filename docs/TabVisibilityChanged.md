@@ -1,6 +1,5 @@
 # TabVisibilityChanged
 
-An event recording that the visibility of a tab has changed.
 
 ## Properties
 

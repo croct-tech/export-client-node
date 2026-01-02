@@ -1,6 +1,5 @@
 # CartModified
 
-An event recording that a shopping cart was modified.
 
 ## Properties
 

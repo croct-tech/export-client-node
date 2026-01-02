@@ -1,6 +1,5 @@
 # WebContext
 
-The context of the web client at the time the event was tracked.
 
 ## Properties
 

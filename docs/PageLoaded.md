@@ -1,6 +1,5 @@
 # PageLoaded
 
-An event recording that a page was loaded.
 
 ## Properties
 

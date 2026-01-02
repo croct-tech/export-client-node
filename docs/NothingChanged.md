@@ -1,6 +1,5 @@
 # NothingChanged
 
-An event recording a period of inactivity.
 
 ## Properties
 
