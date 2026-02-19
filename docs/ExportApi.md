@@ -4,9 +4,64 @@ All URIs are relative to *https://api.croct.io/export*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
+|[**exportEventById**](#exporteventbyid) | **GET** /events/{id} | |
 |[**exportEvents**](#exportevents) | **GET** /events | |
+|[**exportSessionById**](#exportsessionbyid) | **GET** /session/{sessionId} | |
 |[**exportSessions**](#exportsessions) | **GET** /session | |
+|[**exportUserById**](#exportuserbyid) | **GET** /user/{userId} | |
 |[**exportUsers**](#exportusers) | **GET** /user | |
+
+# **exportEventById**
+> SingleEventResponse exportEventById()
+
+
+### Example
+
+```typescript
+import {
+    ExportApi,
+    Configuration
+} from '@croct/export';
+
+const configuration = new Configuration();
+const apiInstance = new ExportApi(configuration);
+
+let id: string; //The unique identifier of the event (default to undefined)
+
+const { status, data } = await apiInstance.exportEventById(
+    id
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**string**] | The unique identifier of the event | defaults to undefined|
+
+
+### Return type
+
+**SingleEventResponse**
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Event found |  -  |
+|**404** | Request error |  -  |
+|**0** | Request error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **exportEvents**
 > EventResponse exportEvents()
@@ -71,6 +126,58 @@ const { status, data } = await apiInstance.exportEvents(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **exportSessionById**
+> Session exportSessionById()
+
+
+### Example
+
+```typescript
+import {
+    ExportApi,
+    Configuration
+} from '@croct/export';
+
+const configuration = new Configuration();
+const apiInstance = new ExportApi(configuration);
+
+let sessionId: string; //The unique identifier of the session (default to undefined)
+
+const { status, data } = await apiInstance.exportSessionById(
+    sessionId
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **sessionId** | [**string**] | The unique identifier of the session | defaults to undefined|
+
+
+### Return type
+
+**Session**
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Session found |  -  |
+|**404** | Request error |  -  |
+|**0** | Request error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **exportSessions**
 > SessionResponse exportSessions()
 
@@ -127,6 +234,58 @@ const { status, data } = await apiInstance.exportSessions(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**2XX** | Success response |  -  |
+|**0** | Request error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **exportUserById**
+> User exportUserById()
+
+
+### Example
+
+```typescript
+import {
+    ExportApi,
+    Configuration
+} from '@croct/export';
+
+const configuration = new Configuration();
+const apiInstance = new ExportApi(configuration);
+
+let userId: string; //The unique identifier of the user (default to undefined)
+
+const { status, data } = await apiInstance.exportUserById(
+    userId
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **userId** | [**string**] | The unique identifier of the user | defaults to undefined|
+
+
+### Return type
+
+**User**
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | User found |  -  |
+|**404** | Request error |  -  |
 |**0** | Request error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
