@@ -75,4 +75,5 @@ docs/WebClient.md
 docs/WebContext.md
 git_push.sh
 index.ts
+package.json
 tsconfig.json
