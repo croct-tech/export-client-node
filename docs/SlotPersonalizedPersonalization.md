@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **contentId** | **string** | The ID that uniquely identifies the content. | [default to undefined]
 **slotVersion** | [**SlotPersonalizedPersonalizationSlotVersion**](SlotPersonalizedPersonalizationSlotVersion.md) |  | [optional] [default to undefined]
 **assignedVariant** | [**SlotPersonalizedPersonalizationAssignedVariant**](SlotPersonalizedPersonalizationAssignedVariant.md) |  | [default to undefined]
+**locale** | **string** | The locale of the content. | [optional] [default to undefined]
 
 ## Example
 
@@ -24,6 +25,7 @@ const instance: SlotPersonalizedPersonalization = {
     contentId,
     slotVersion,
     assignedVariant,
+    locale,
 };
 ```
 

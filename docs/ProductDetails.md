@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **variant** | **string** | The variant of the product, such as size, color and style. For example, \&quot;64GB Green\&quot;. | [default to undefined]
 **displayPrice** | **number** | The price of the product displayed in the store. For example, 59.90. | [default to undefined]
 **originalPrice** | **number** | The original price of the product. For example, 99.90. | [default to undefined]
+**currency** | **string** | The currency in which the monetary values are expressed in the shopping cart. | [optional] [default to undefined]
 **url** | **string** | The URL of the product page. For example, \&quot;https://apple.com/iphone\&quot;. | [default to undefined]
 **imageUrl** | **string** | The URL of the main product image. For example, \&quot;https://img.apple.com/iphone.png\&quot;. | [default to undefined]
 
@@ -31,6 +32,7 @@ const instance: ProductDetails = {
     variant,
     displayPrice,
     originalPrice,
+    currency,
     url,
     imageUrl,
 };
