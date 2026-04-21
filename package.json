@@ -1,6 +1,6 @@
 {
   "name": "@croct/export",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "OpenAPI client for @croct/export",
   "author": "OpenAPI-Generator Contributors",
   "repository": {
