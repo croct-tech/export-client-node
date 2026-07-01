@@ -5,6 +5,4 @@
 LICENSE
 README.md
 .gitignore
-.npmignore
 package-lock.json
-package.json
