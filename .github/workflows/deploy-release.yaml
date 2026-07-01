@@ -1,0 +1,16 @@
+name: Deploy release
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  deploy:
+    uses: croct-tech/shared-public-configs/.github/workflows/publish-public-npm-package.yml@master
+    with:
+      build-dir: "."
+      prepare-script: >-
+        tmp=$(mktemp) &&
+        jq --arg version "$GITHUB_REF_NAME" '.version = $version' package.json > "$tmp" &&
+        mv "$tmp" package.json
