@@ -6,7 +6,7 @@ The information about an audience.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** | The ID that uniquely identifies the audience. | [optional] [default to undefined]
+**id** | **string** | The ID that uniquely identifies the audience. | [default to undefined]
 **name** | **string** | The name of the audience. | [optional] [default to undefined]
 **customId** | **string** | The custom ID of the audience. | [optional] [default to undefined]
 

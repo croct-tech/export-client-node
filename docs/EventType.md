@@ -53,4 +53,24 @@
 
 * `USER_SCROLLED` (value: `'userScrolled'`)
 
+* `SESSION_MERGED` (value: `'sessionMerged'`)
+
+* `SESSION_CLOSED` (value: `'sessionClosed'`)
+
+* `SESSION_STARTED` (value: `'sessionStarted'`)
+
+* `POST_VIEWED` (value: `'postViewed'`)
+
+* `USER_PROFILE_CHANGED` (value: `'userProfileChanged'`)
+
+* `CAMPAIGN_DETECTED` (value: `'campaignDetected'`)
+
+* `SESSION_ATTRIBUTES_CHANGED` (value: `'sessionAttributesChanged'`)
+
+* `PRODUCT_ORDERED` (value: `'productOrdered'`)
+
+* `INTEREST_SHOWN` (value: `'interestShown'`)
+
+* `LINK_OPENED` (value: `'linkOpened'`)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

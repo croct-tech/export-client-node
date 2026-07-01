@@ -1,20 +1,18 @@
-# UserSignedUp
+# UserProfileChanged
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**externalUserId** | **string** | The external ID of the user. | [default to undefined]
-**patch** | [**AtomicPatch**](AtomicPatch.md) |  | [optional] [default to undefined]
+**patch** | [**AtomicPatch**](AtomicPatch.md) |  | [default to undefined]
 
 ## Example
 
 ```typescript
-import { UserSignedUp } from '@croct/export';
+import { UserProfileChanged } from '@croct/export';
 
-const instance: UserSignedUp = {
-    externalUserId,
+const instance: UserProfileChanged = {
     patch,
 };
 ```

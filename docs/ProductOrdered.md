@@ -1,21 +1,21 @@
-# UserSignedUp
+# ProductOrdered
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**externalUserId** | **string** | The external ID of the user. | [default to undefined]
-**patch** | [**AtomicPatch**](AtomicPatch.md) |  | [optional] [default to undefined]
+**order** | [**OrderSummary**](OrderSummary.md) |  | [default to undefined]
+**item** | [**OrderItem**](OrderItem.md) |  | [default to undefined]
 
 ## Example
 
 ```typescript
-import { UserSignedUp } from '@croct/export';
+import { ProductOrdered } from '@croct/export';
 
-const instance: UserSignedUp = {
-    externalUserId,
-    patch,
+const instance: ProductOrdered = {
+    order,
+    item,
 };
 ```
 

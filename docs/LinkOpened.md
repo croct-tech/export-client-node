@@ -1,21 +1,19 @@
-# UserSignedUp
+# LinkOpened
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**externalUserId** | **string** | The external ID of the user. | [default to undefined]
-**patch** | [**AtomicPatch**](AtomicPatch.md) |  | [optional] [default to undefined]
+**link** | **string** | The URI of the link. For example, \&quot;https://croct.com/blog/awesome-post\&quot;. | [optional] [default to undefined]
 
 ## Example
 
 ```typescript
-import { UserSignedUp } from '@croct/export';
+import { LinkOpened } from '@croct/export';
 
-const instance: UserSignedUp = {
-    externalUserId,
-    patch,
+const instance: LinkOpened = {
+    link,
 };
 ```
 

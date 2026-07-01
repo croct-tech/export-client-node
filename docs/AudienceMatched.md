@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**audienceIds** | [**Array&lt;Audience&gt;**](Audience.md) |  | [optional] [default to undefined]
+**audiences** | [**Array&lt;Audience&gt;**](Audience.md) |  | [optional] [default to undefined]
 
 ## Example
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 import { AudienceMatched } from '@croct/export';
 
 const instance: AudienceMatched = {
-    audienceIds,
+    audiences,
 };
 ```
 

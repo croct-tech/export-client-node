@@ -1,21 +1,19 @@
-# UserSignedUp
+# SessionClosed
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**externalUserId** | **string** | The external ID of the user. | [default to undefined]
-**patch** | [**AtomicPatch**](AtomicPatch.md) |  | [optional] [default to undefined]
+**session** | [**Session**](Session.md) |  | [default to undefined]
 
 ## Example
 
 ```typescript
-import { UserSignedUp } from '@croct/export';
+import { SessionClosed } from '@croct/export';
 
-const instance: UserSignedUp = {
-    externalUserId,
-    patch,
+const instance: SessionClosed = {
+    session,
 };
 ```
 

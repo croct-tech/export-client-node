@@ -5,10 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** | The unique identifier of the event. | [default to undefined]
+**eventId** | **string** | The unique identifier of the event. | [default to undefined]
 **sessionId** | **string** | The ID of the session assigned to the event. | [default to undefined]
 **userId** | **string** | The internal ID of the user who originated the event. | [default to undefined]
 **timestamp** | **number** | The timestamp when the event was tracked, in milliseconds since epoch. | [default to undefined]
+**systemTimestamp** | **number** | The timestamp when the event was ingested by the system, in milliseconds since epoch. | [default to undefined]
 **context** | [**EventContext**](EventContext.md) |  | [default to undefined]
 **payload** | [**EventPayload**](EventPayload.md) |  | [default to undefined]
 
@@ -18,10 +19,11 @@ Name | Type | Description | Notes
 import { Event } from '@croct/export';
 
 const instance: Event = {
-    id,
+    eventId,
     sessionId,
     userId,
     timestamp,
+    systemTimestamp,
     context,
     payload,
 };

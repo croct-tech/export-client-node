@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**majorVersion** | **string** | The major version. | [optional] [default to undefined]
-**minorVersion** | **string** | The minor version. | [optional] [default to undefined]
+**majorVersion** | **number** | The major version. | [optional] [default to undefined]
+**minorVersion** | **number** | The minor version. | [optional] [default to undefined]
 
 ## Example
 

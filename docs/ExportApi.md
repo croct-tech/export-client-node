@@ -4,7 +4,7 @@ All URIs are relative to *https://api.croct.io/export*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**exportEventById**](#exporteventbyid) | **GET** /events/{id} | |
+|[**exportEventById**](#exporteventbyid) | **GET** /events/{eventId} | |
 |[**exportEvents**](#exportevents) | **GET** /events | |
 |[**exportSessionById**](#exportsessionbyid) | **GET** /session/{sessionId} | |
 |[**exportSessions**](#exportsessions) | **GET** /session | |
@@ -26,10 +26,10 @@ import {
 const configuration = new Configuration();
 const apiInstance = new ExportApi(configuration);
 
-let id: string; //The unique identifier of the event (default to undefined)
+let eventId: string; //The unique identifier of the event (default to undefined)
 
 const { status, data } = await apiInstance.exportEventById(
-    id
+    eventId
 );
 ```
 
@@ -37,7 +37,7 @@ const { status, data } = await apiInstance.exportEventById(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | [**string**] | The unique identifier of the event | defaults to undefined|
+| **eventId** | [**string**] | The unique identifier of the event | defaults to undefined|
 
 
 ### Return type

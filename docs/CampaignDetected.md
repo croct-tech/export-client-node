@@ -1,21 +1,19 @@
-# UserSignedUp
+# CampaignDetected
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**externalUserId** | **string** | The external ID of the user. | [default to undefined]
-**patch** | [**AtomicPatch**](AtomicPatch.md) |  | [optional] [default to undefined]
+**campaign** | [**Campaign**](Campaign.md) |  | [default to undefined]
 
 ## Example
 
 ```typescript
-import { UserSignedUp } from '@croct/export';
+import { CampaignDetected } from '@croct/export';
 
-const instance: UserSignedUp = {
-    externalUserId,
-    patch,
+const instance: CampaignDetected = {
+    campaign,
 };
 ```
 

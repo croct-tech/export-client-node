@@ -1,21 +1,19 @@
-# UserSignedUp
+# InterestShown
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**externalUserId** | **string** | The external ID of the user. | [default to undefined]
-**patch** | [**AtomicPatch**](AtomicPatch.md) |  | [optional] [default to undefined]
+**interests** | **Array&lt;string&gt;** | The set of interests. For example, [\&quot;music\&quot;, \&quot;movies\&quot;]. | [default to undefined]
 
 ## Example
 
 ```typescript
-import { UserSignedUp } from '@croct/export';
+import { InterestShown } from '@croct/export';
 
-const instance: UserSignedUp = {
-    externalUserId,
-    patch,
+const instance: InterestShown = {
+    interests,
 };
 ```
 
