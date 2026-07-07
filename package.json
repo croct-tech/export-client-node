@@ -1,11 +1,15 @@
 {
   "name": "@croct/export",
   "version": "0.8.0",
-  "description": "OpenAPI client for @croct/export",
-  "author": "OpenAPI-Generator Contributors",
+  "description": "Node.js client for the Croct Export API.",
+  "author": {
+    "name": "Croct",
+    "email": "lib@croct.com",
+    "url": "https://github.com/croct-tech/export-client-node"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+    "url": "git+https://github.com/croct-tech/export-client-node.git"
   },
   "keywords": [
     "axios",
@@ -14,7 +18,7 @@
     "openapi-generator",
     "@croct/export"
   ],
-  "license": "Unlicense",
+  "license": "MIT",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
@@ -27,5 +31,9 @@
   "devDependencies": {
     "@types/node": "12.11.5 - 12.20.42",
     "typescript": "^4.0 || ^5.0"
+  },
+  "homepage": "https://github.com/croct-tech/export-client-node",
+  "bugs": {
+    "url": "https://github.com/croct-tech/export-client-node/issues"
   }
 }
