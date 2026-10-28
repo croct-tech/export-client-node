@@ -5,6 +5,7 @@ common.ts
 configuration.ts
 docs/AddOperation.md
 docs/ApiProblem.md
+docs/ApiProblemViolationsInner.md
 docs/AtomicPatch.md
 docs/AtomicPatchOperationsInner.md
 docs/Audience.md
@@ -26,6 +27,7 @@ docs/Currency.md
 docs/DecrementOperation.md
 docs/Device.md
 docs/DeviceCategory.md
+docs/EvaluationContext.md
 docs/Event.md
 docs/EventContext.md
 docs/EventOccurred.md
@@ -52,6 +54,7 @@ docs/OrderItem.md
 docs/OrderPlaced.md
 docs/OrderStatus.md
 docs/OrderSummary.md
+docs/PageInfo.md
 docs/PageLoaded.md
 docs/PageOpened.md
 docs/Point.md
@@ -61,6 +64,7 @@ docs/ProductAbandoned.md
 docs/ProductDetails.md
 docs/ProductOrdered.md
 docs/ProductViewed.md
+docs/QueryEvaluated.md
 docs/Region.md
 docs/RemoveOperation.md
 docs/Session.md
@@ -96,6 +100,7 @@ docs/UserSignedUp.md
 docs/UserStatistics.md
 docs/WebClient.md
 docs/WebContext.md
+docs/WebEvaluationContext.md
 git_push.sh
 index.ts
 package.json

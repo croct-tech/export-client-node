@@ -45,6 +45,8 @@
 
 * `SLOT_PERSONALIZED` (value: `'slotPersonalized'`)
 
+* `QUERY_EVALUATED` (value: `'queryEvaluated'`)
+
 * `LEAD_GENERATED` (value: `'leadGenerated'`)
 
 * `AUDIENCE_MATCHED` (value: `'audienceMatched'`)

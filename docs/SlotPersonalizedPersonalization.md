@@ -9,9 +9,10 @@ Name | Type | Description | Notes
 **slotId** | **string** | The ID that uniquely identifies the slot. | [default to undefined]
 **experienceId** | **string** | The ID that uniquely identifies the experience. | [default to undefined]
 **contentId** | **string** | The ID that uniquely identifies the content. | [default to undefined]
-**slotVersion** | [**SlotPersonalizedPersonalizationSlotVersion**](SlotPersonalizedPersonalizationSlotVersion.md) |  | [optional] [default to undefined]
+**slotVersion** | [**SlotPersonalizedPersonalizationSlotVersion**](SlotPersonalizedPersonalizationSlotVersion.md) |  | [default to undefined]
 **assignedVariant** | [**SlotPersonalizedPersonalizationAssignedVariant**](SlotPersonalizedPersonalizationAssignedVariant.md) |  | [default to undefined]
-**locale** | **string** | The locale of the content. | [optional] [default to undefined]
+**locale** | **string** | The locale of the content. | [default to undefined]
+**evaluationContext** | [**EvaluationContext**](EvaluationContext.md) |  | [default to undefined]
 
 ## Example
 
@@ -26,6 +27,7 @@ const instance: SlotPersonalizedPersonalization = {
     slotVersion,
     assignedVariant,
     locale,
+    evaluationContext,
 };
 ```
 
